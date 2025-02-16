@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Earbuds",
+      "description": "High-quality Bluetooth earbuds with noise cancellation and 20-hour battery life.",
+      "price": 59.99,
+      "image": "images/earbuds.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Gaming Keyboard",
+      "description": "RGB mechanical keyboard with customizable keys and ergonomic design.",
+      "price": 79.99,
+      "image": "images/keyboard.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Smartphone Tripod",
+      "description": "Adjustable and lightweight tripod for stable video recording and photography.",
+      "price": 29.99,
+      "image": "images/tripod.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "description": "Track your fitness activities, heart rate, and sleep patterns with this stylish smartwatch.",
+      "price": 99.99,
+      "image": "images/smartwatch.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Bluetooth Speaker",
+      "description": "Compact wireless speaker with deep bass and 12-hour battery life.",
+      "price": 49.99,
+      "image": "images/speaker.jpg"
+    },
+    {
+      "id": 6,
+      "name": "4K Action Camera",
+      "description": "Waterproof action camera with 4K recording and image stabilization.",
+      "price": 149.99,
+      "image": "images/camera.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Laptop Cooling Pad",
+      "description": "Ultra-quiet cooling pad with adjustable fan speeds and LED lighting.",
+      "price": 39.99,
+      "image": "images/coolingPad.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Multi-port Adapter",
+      "description": "Connect devices with 6-in-1 USB-C hub featuring HDMI, USB, and SD card slots.",
+      "price": 44.99,
+      "image": "images/adapter.jpg"
+    }
+  ]
+  
