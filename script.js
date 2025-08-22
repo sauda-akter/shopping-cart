@@ -174,13 +174,9 @@ const applyPromo = () => {
         document.getElementById('promoMessage').innerText = "Promo code already applied!";
         return;
     }
-    else {
-    alert("Invalid Promo Code!");
-    document.getElementById('promoMessage').innerText = "Invalid Promo Code";
-    discountRate = 0;
-    }
 
     let code = document.getElementById('promoCodeInput').value.trim().toLowerCase();
+
     if (code === "ostad10") {
         discountRate = 0.10;
         promoApplied = true;
@@ -192,9 +188,11 @@ const applyPromo = () => {
         document.getElementById('promoMessage').innerText = "50% discount applied!";
     } 
     else {
+        alert("Invalid Promo Code!");
         document.getElementById('promoMessage').innerText = "Invalid Promo Code";
         discountRate = 0;
     }
+
     updateTotalPrice();
 };
 
