@@ -6,6 +6,15 @@ let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
 let products = [];
 let cart = [];
+let promoApplied = false;
+let discountRate = 0;
+
+const resetPromo = () => {
+    promoApplied = false;
+    discountRate = 0;
+    document.getElementById('promoCodeInput').value = "";
+    document.getElementById('promoMessage').innerText = "";
+};
 
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
@@ -64,15 +73,18 @@ const addCartToMemory = () => {
 };
 
 const updateTotalPrice = () => {
-    let total = 0;
+    let subtotal = 0;
     cart.forEach(item => {
         let product = products.find(p => p.id == item.product_id);
         if (product) {
-            total += product.price * item.quantity;
+            subtotal += product.price * item.quantity;
         }
     });
-    document.querySelector('.total-price').innerText = `$${total.toFixed(2)}`;
+    let finalTotal = subtotal * (1 - discountRate);
+    if (finalTotal < 0) finalTotal = 0;
+    document.querySelector('.total-price').innerText = `$${finalTotal.toFixed(2)}`;
 };
+
 
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
@@ -155,3 +167,43 @@ const initApp = () => {
     })
 };
 initApp();
+
+
+const applyPromo = () => {
+    if (promoApplied) {
+        document.getElementById('promoMessage').innerText = "Promo code already applied!";
+        return;
+    }
+    else {
+    alert("Invalid Promo Code!");
+    document.getElementById('promoMessage').innerText = "Invalid Promo Code";
+    discountRate = 0;
+    }
+
+    let code = document.getElementById('promoCodeInput').value.trim().toLowerCase();
+    if (code === "ostad10") {
+        discountRate = 0.10;
+        promoApplied = true;
+        document.getElementById('promoMessage').innerText = "10% discount applied!";
+    } 
+    else if (code === "ostad50") {
+        discountRate = 0.50;
+        promoApplied = true;
+        document.getElementById('promoMessage').innerText = "50% discount applied!";
+    } 
+    else {
+        document.getElementById('promoMessage').innerText = "Invalid Promo Code";
+        discountRate = 0;
+    }
+    updateTotalPrice();
+};
+
+document.getElementById('applyPromoBtn').addEventListener('click', applyPromo);
+
+document.querySelector('.checkOut').addEventListener('click', () => {
+    alert("Order placed successfully!");
+    cart = [];
+    addCartToMemory();
+    addCartToHTML();
+    resetPromo();
+});

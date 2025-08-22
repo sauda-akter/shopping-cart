@@ -186,3 +186,32 @@ body.showCart .container{
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Promo Section */
+.promo-section {
+    margin: 10px;
+    text-align: center;
+}
+
+#promoCodeInput {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 5px;
+}
+
+#applyPromoBtn {
+    background-color: #E8BC0E;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#promoMessage {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
